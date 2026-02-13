@@ -1,0 +1,105 @@
+{
+  "clear": [{ "description": "clear sky", "icon": "bi-sun" }],
+  "clouds": [
+    { "description": "few clouds", "icon": "bi-cloud-sun" },
+    { "description": "scattered clouds", "icon": "bi-clouds" },
+    { "description": "broken clouds", "icon": "bi-clouds" },
+    { "description": "overcast clouds", "icon": "bi-cloud" }
+  ],
+  "rain": [
+    { "description": "light rain", "icon": "bi-cloud-drizzle" },
+    { "description": "moderate rain", "icon": "bi-cloud-rain" },
+    { "description": "heavy intensity rain", "icon": "bi-cloud-rain-heavy" },
+    { "description": "very heavy rain", "icon": "bi-cloud-rain-heavy" },
+    { "description": "extreme rain", "icon": "bi-cloud-rain-heavy" },
+    { "description": "freezing rain", "icon": "bi-cloud-sleet" },
+    {
+      "description": "light intensity shower rain",
+      "icon": "bi-cloud-drizzle"
+    },
+    { "description": "shower rain", "icon": "bi-cloud-rain" },
+    {
+      "description": "heavy intensity shower rain",
+      "icon": "bi-cloud-rain-heavy"
+    },
+    { "description": "ragged shower rain", "icon": "bi-cloud-rain" }
+  ],
+  "drizzle": [
+    { "description": "light intensity drizzle", "icon": "bi-cloud-drizzle" },
+    { "description": "drizzle", "icon": "bi-cloud-drizzle" },
+    { "description": "heavy intensity drizzle", "icon": "bi-cloud-drizzle" },
+    {
+      "description": "light intensity drizzle rain",
+      "icon": "bi-cloud-drizzle"
+    },
+    { "description": "drizzle rain", "icon": "bi-cloud-drizzle" },
+    {
+      "description": "heavy intensity drizzle rain",
+      "icon": "bi-cloud-rain"
+    },
+    { "description": "shower rain and drizzle", "icon": "bi-cloud-drizzle" },
+    {
+      "description": "heavy shower rain and drizzle",
+      "icon": "bi-cloud-rain"
+    },
+    { "description": "shower drizzle", "icon": "bi-cloud-drizzle" }
+  ],
+  "thunderstorm": [
+    {
+      "description": "thunderstorm with light rain",
+      "icon": "bi-cloud-lightning-rain"
+    },
+    {
+      "description": "thunderstorm with rain",
+      "icon": "bi-cloud-lightning-rain"
+    },
+    {
+      "description": "thunderstorm with heavy rain",
+      "icon": "bi-cloud-lightning-rain"
+    },
+    { "description": "light thunderstorm", "icon": "bi-cloud-lightning" },
+    { "description": "thunderstorm", "icon": "bi-cloud-lightning" },
+    {
+      "description": "heavy thunderstorm",
+      "icon": "bi-cloud-lightning-rain"
+    },
+    { "description": "ragged thunderstorm", "icon": "bi-cloud-lightning" },
+    {
+      "description": "thunderstorm with light drizzle",
+      "icon": "bi-cloud-lightning-rain"
+    },
+    {
+      "description": "thunderstorm with drizzle",
+      "icon": "bi-cloud-lightning-rain"
+    },
+    {
+      "description": "thunderstorm with heavy drizzle",
+      "icon": "bi-cloud-lightning-rain"
+    }
+  ],
+  "snow": [
+    { "description": "light snow", "icon": "bi-cloud-snow" },
+    { "description": "snow", "icon": "bi-cloud-snow" },
+    { "description": "heavy snow", "icon": "bi-snow" },
+    { "description": "sleet", "icon": "bi-cloud-sleet" },
+    { "description": "light shower sleet", "icon": "bi-cloud-sleet" },
+    { "description": "shower sleet", "icon": "bi-cloud-sleet" },
+    { "description": "light rain and snow", "icon": "bi-cloud-sleet" },
+    { "description": "rain and snow", "icon": "bi-cloud-sleet" },
+    { "description": "light shower snow", "icon": "bi-cloud-snow" },
+    { "description": "shower snow", "icon": "bi-cloud-snow" },
+    { "description": "heavy shower snow", "icon": "bi-snow" }
+  ],
+  "atmosphere": [
+    { "description": "mist", "icon": "bi-cloud-fog" },
+    { "description": "smoke", "icon": "bi-cloud-haze" },
+    { "description": "haze", "icon": "bi-cloud-haze" },
+    { "description": "sand/dust whirls", "icon": "bi-tornado" },
+    { "description": "fog", "icon": "bi-cloud-fog" },
+    { "description": "sand", "icon": "bi-cloud-haze" },
+    { "description": "dust", "icon": "bi-cloud-haze" },
+    { "description": "volcanic ash", "icon": "bi-cloud-haze" },
+    { "description": "squalls", "icon": "bi-wind" },
+    { "description": "tornado", "icon": "bi-tornado" }
+  ]
+}

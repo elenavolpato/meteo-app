@@ -1,52 +1,54 @@
-import { useEffect, useState } from "react"
 import { Col, Row } from "react-bootstrap"
-import Loading from "./Loading"
+import weatherDescriptions from "../data/weatherDescriptions.json"
 
-const apiKey = "bc45c3a9cab5095ab402b5746a08d45e"
-
-const TodaysForecast = (props) => {
-  const [forecastData, setForecastData] = useState(null)
-  const [isLoading, setIsLoading] = useState(true)
-
-  const getTodaysWeather = () => {
-    fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${props.searchedCity}&appid=${apiKey}`,
-    )
-      .then((res) => {
-        if (res.ok) return res.json()
-        else throw new Error("Error in fetching current weather data")
-      })
-      .then((res) => {
-        console.log("here", res)
-        setForecastData(res)
-        setIsLoading(false)
-      })
-      .catch((err) => {
-        console.error("error fetching data", err)
-        setIsLoading(false)
-      })
-  }
-
+const TodaysForecast = ({ weatherData, searchedCity }) => {
   const convertTempToCelsius = (temp) => (temp - 273.15).toFixed(1) + " °C"
 
-  useEffect(() => {
-    getTodaysWeather()
-  }, [props.searchedCity])
+  const capitalizeFirstLetter = (city) => {
+    return (
+      String(city).charAt(0).toUpperCase() + String(city).slice(1).toLowerCase()
+    )
+  }
+
+  const renderCurrentConditions = (main, description) => {
+    const category = main.toLowerCase()
+    const weatherIcon =
+      weatherDescriptions[category]?.find(
+        (item) => item.description === description,
+      )?.icon || "bi-question-circle"
+
+    return weatherIcon
+  }
 
   return (
     <>
-      {isLoading && <Loading />}
-      {forecastData && (
-        <>
-          <p> {props.searchedCity}</p>
-          <Col>
-            Current temp: {convertTempToCelsius(forecastData.main.temp)}
-          </Col>
-          <Row>
-            <Col> Min {convertTempToCelsius(forecastData.main.temp_min)}</Col>
-            <Col>Max {convertTempToCelsius(forecastData.main.temp_max)}</Col>
+      {weatherData && (
+        <Col
+          xs={12}
+          md={4}
+          className="border border-1 border-light rounded p-4 light-bg m-3  align-items-center"
+        >
+          <Row className="d-flex justify-content-center">
+            <Col>
+              <i
+                className={`bi ${renderCurrentConditions(weatherData.weather[0].main, weatherData.weather[0].description)} fs-1 mt-1`}
+              ></i>
+              <p>{capitalizeFirstLetter(searchedCity)}</p>
+            </Col>
+            <Col>
+              <p className="fs-1 fw-bold mt-1 mb-0">
+                {convertTempToCelsius(weatherData.main.temp)}
+              </p>
+              <p>
+                Fells like: {convertTempToCelsius(weatherData.main.feels_like)}
+              </p>
+            </Col>
           </Row>
-        </>
+          <Row>
+            <Col>Min {convertTempToCelsius(weatherData.main.temp_min)}</Col>
+            <Col>Max {convertTempToCelsius(weatherData.main.temp_max)}</Col>
+          </Row>
+        </Col>
       )}
     </>
   )

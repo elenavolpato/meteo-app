@@ -6,16 +6,7 @@ import Home from "./routes/Home"
 function App() {
   return (
     <>
-      {/*  <BrowserRouter>
-        <Router>
-          <Route
-            path="/"
-            element={ */}
       <Home />
-      {/* }
-          ></Route>
-        </Router>
-      </BrowserRouter> */}
     </>
   )
 }
