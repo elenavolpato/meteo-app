@@ -61,8 +61,7 @@ const Home = () => {
           {weatherData && (
             <TodaysForecast
               weatherData={weatherData}
-              isLoading={isLoading}
-              searchedCity={searchedCity}
+              capitalizeFirstLetter={capitalizeFirstLetter}
             />
           )}
           {isLoading && <Loading />}

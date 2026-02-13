@@ -1,7 +1,8 @@
 import { Col, Row } from "react-bootstrap"
 import weatherDescriptions from "../data/weatherDescriptions.json"
 
-const TodaysForecast = ({ weatherData }) => {
+const TodaysForecast = (props) => {
+  const { weatherData, capitalizeFirstLetter } = props
   const convertTempToCelsius = (temp) => (temp - 273.15).toFixed(1) + " °C"
 
   const renderCurrentConditions = (main, description) => {
@@ -13,11 +14,7 @@ const TodaysForecast = ({ weatherData }) => {
 
     return weatherIcon
   }
-  const capitalizeFirstLetter = (city) => {
-    return (
-      String(city).charAt(0).toUpperCase() + String(city).slice(1).toLowerCase()
-    )
-  }
+
   return (
     <>
       {weatherData && (
@@ -45,11 +42,11 @@ const TodaysForecast = ({ weatherData }) => {
           </Row>
           <Row className="mt-2">
             <Col className="fs-5 fw-medium">
-              <i class="bi bi-arrow-down text-info"></i>
+              <i className="bi bi-arrow-down text-info"></i>
               {convertTempToCelsius(weatherData.main.temp_min)}
             </Col>
             <Col className="fs-5 fw-medium">
-              <i class="bi bi-arrow-up text-danger"></i>
+              <i className="bi bi-arrow-up text-danger"></i>
               {convertTempToCelsius(weatherData.main.temp_max)}
             </Col>
           </Row>
