@@ -17,6 +17,15 @@
   margin-inline: -8px;
 }
 
-.wind-container {
-  min-width: 170px !important;
+.wind-container,
+.humidity-container {
+  flex-basis: 50%;
+}
+
+.other-status-container {
+  margin-right: -10px;
+}
+
+.humidity-container {
+  margin-left: -12px;
 }
