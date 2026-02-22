@@ -48,6 +48,8 @@ const ThreeHoursForecast = (props) => {
     }
   }, [lat, lon])
 
+  if (!lat || !lon) return null
+
   return (
     <Col
       xs={12}
