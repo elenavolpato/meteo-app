@@ -39,9 +39,8 @@ const PollutionStatus = (props) => {
       case 2:
         return "info"
       case 3:
-        return
+        return "secondary"
       case 4:
-        "secondary"
         return "warning"
       case 5:
         return "danger"
@@ -54,7 +53,9 @@ const PollutionStatus = (props) => {
     if (lat && lon) {
       getPollutionStatus()
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lat, lon])
+  if (!lat || !lon) return null
 
   return (
     <Col
